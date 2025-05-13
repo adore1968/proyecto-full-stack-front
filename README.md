@@ -1,12 +1,40 @@
-# React + Vite
+# 🎯 Frontend - Contactos + Autenticación
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es el frontend de una aplicación fullstack. Permite a los usuarios autenticarse mediante Firebase y gestionar una lista de contactos mediante una interfaz amigable y responsiva.
 
-Currently, two official plugins are available:
+🔗 Este frontend se conecta a un backend desarrollado con Express que expone rutas protegidas para autenticación y operaciones CRUD.  
+👉 Repositorio del backend: [Backend - Proyecto Fullstack](https://github.com/adore1968/proyecto-full-stack-back)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** – Librería principal para construir la UI.
+- **React Router DOM** – Para la navegación entre vistas.
+- **Axios** – Para consumir la API mediante una instancia personalizada.
+- **Tailwind CSS** – Para los estilos con clases utilitarias.
+- **Context API** – Para el manejo global del estado (auth y contactos).
+- **React Icons** – Para íconos, incluyendo un loader animado con `animate-spin`.
+
+---
+
+## 🔐 Funcionalidades principales
+
+- Autenticación de usuario mediante Firebase.
+- Protección de rutas privadas.
+- CRUD de contactos (crear, ver, editar, eliminar).
+- Loader visual mientras se cargan los datos.
+- Manejo de sesión con almacenamiento de token JWT.
+
+---
+
+## 🌐 Comunicación con el backend
+
+Todas las peticiones al backend se realizan usando una **instancia de Axios** que incluye automáticamente el token JWT en los headers.  
+El backend expone las siguientes rutas:
+
+- `POST /auth/login`
+- `GET /contactos`
+- `POST /contactos`
+- `PUT /contactos/:id`
+- `DELETE /contactos/:id`
